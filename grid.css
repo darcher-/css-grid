@@ -1,0 +1,50 @@
+.grid{
+    position:relative;
+    box-sizing:border-box;
+}
+.grid:after {
+    content: "";
+    display: table;
+    clear: both
+}
+.grid > div{
+    background-color:#4af;
+    border:1px solid white;
+    box-sizing:border-box;
+    text-align:center;
+}
+.grid > div:first-child:nth-last-child(1),
+.grid > div:first-child:nth-last-child(3),
+.grid > div:first-child:nth-last-child(3) ~ div {
+    width: 100%;
+    float:none;
+    display:block
+}
+
+@media (min-width:480px){
+    .grid > div{
+        float:left;
+        display: inline-block;
+    }
+    .grid > div:first-child:nth-last-child(2),
+    .grid > div:first-child:nth-last-child(2) ~ div {
+        width: 50%;
+    }
+    .grid > div:first-child:nth-last-child(4),
+    .grid > div:first-child:nth-last-child(4) ~ div {
+        width: 25%;
+    }
+}
+
+@media (min-width:600px){
+    .grid > div:first-child:nth-last-child(3),
+    .grid > div:first-child:nth-last-child(3) ~ div {
+        width: 33.3333%;
+        display:inline-block;
+        float:left;
+    }
+    .grid > div:first-child:nth-last-child(4),
+    .grid > div:first-child:nth-last-child(4) ~ div {
+        width: 50%;
+    }
+}
