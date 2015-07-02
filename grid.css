@@ -1,50 +1,50 @@
-.grid{
-    position:relative;
-    box-sizing:border-box;
+.multisection {
+    position: relative;
+    box-sizing: border-box
 }
-.grid:after {
+.multisection:after {
     content: "";
     display: table;
     clear: both
 }
-.grid > div{
-    background-color:#4af;
-    border:1px solid white;
-    box-sizing:border-box;
-    text-align:center;
-}
-.grid > div:first-child:nth-last-child(1),
-.grid > div:first-child:nth-last-child(3),
-.grid > div:first-child:nth-last-child(3) ~ div {
-    width: 100%;
-    float:none;
-    display:block
+.multisection>* {
+    box-sizing: border-box;
+    padding-bottom: 0 15px
 }
 
-@media (min-width:480px){
-    .grid > div{
-        float:left;
-        display: inline-block;
+
+@media (min-width: 540px) {
+    .multisection>* {
+        float: left;
+        padding: 0 15px
     }
-    .grid > div:first-child:nth-last-child(2),
-    .grid > div:first-child:nth-last-child(2) ~ div {
-        width: 50%;
+    .multisection>*:first-child:nth-last-child(1), .multisection>*:first-child:nth-last-child(3), .multisection>*:first-child:nth-last-child(3)~* {
+        width: 100%;
+        float: none
     }
-    .grid > div:first-child:nth-last-child(4),
-    .grid > div:first-child:nth-last-child(4) ~ div {
-        width: 25%;
+    .multisection>*:first-child:nth-last-child(4), .multisection>*:first-child:nth-last-child(4)~*, .multisection>*:first-child:nth-last-child(2), .multisection>*:first-child:nth-last-child(2)~* {
+        width: 50%
+    }
+    .multisection>*:first-child {
+        padding-left: 0
+    }
+    .multisection>*:last-child {
+        padding-left: 0
+    }
+    .multisection>*:nth-child(odd), .multisection>*:nth-child(even) {
+        padding-left: 0
     }
 }
+@media (min-width:800px){
 
-@media (min-width:600px){
-    .grid > div:first-child:nth-last-child(3),
-    .grid > div:first-child:nth-last-child(3) ~ div {
-        width: 33.3333%;
-        display:inline-block;
-        float:left;
+    .multisection>*:first-child:nth-last-child(3), .multisection>*:first-child:nth-last-child(3)~* {
+        float: left;
+        width: 33.3333%
     }
-    .grid > div:first-child:nth-last-child(4),
-    .grid > div:first-child:nth-last-child(4) ~ div {
-        width: 50%;
+    .multisection>*:first-child:nth-last-child(4), .multisection>*:first-child:nth-last-child(4)~* {
+        width: 25%
+    }
+    .multisection>*:nth-child(odd), .multisection>*:nth-child(even) {
+        padding-left: 15px
     }
 }
